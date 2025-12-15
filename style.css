@@ -31,13 +31,8 @@
 } */
 
 @font-face {
-  font-family: "Studio";
-  src: url(./studioscripttt_regular.ttf);
-}
-
-@font-face {
   font-family: "Avehope";
-  src: url(./AvehopeDEMO-Regular-BF690d631a96549.otf);
+  src: url(./assets/font/AvehopeDEMO-Regular-BF690d631a96549.otf);
 }
 
 /* BODY BACKGROUND */
@@ -46,7 +41,7 @@ body {
   min-height: 100vh;
 
   background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-    url("./02.jpg") center / cover no-repeat fixed;
+    url("./assets/images/02.jpg") center / cover no-repeat fixed;
 
   color: #fff;
 }
