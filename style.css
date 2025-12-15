@@ -5,95 +5,74 @@
   box-sizing: border-box;
 }
 
-/* @font-face {
-  font-family: "Amarna Bold";
-  src: url(./Amarna-Bold.ttf);
-}
-
-@font-face {
-  font-family: "Amarna Italic";
-  src: url(./Amarna-Italic.ttf);
-}
-
-@font-face {
-  font-family: "Amarna Light";
-  src: url(./Amarna-Light.ttf);
-}
-
-@font-face {
-  font-family: "Amarna";
-  src: url(./Amarna-Regular.ttf);
-}
-
-@font-face {
-  font-family: "Amarna Medium";
-  src: url(./Amarna-Medium.ttf);
-} */
-
+/* FONT */
 @font-face {
   font-family: "Avehope";
-  src: url(./assets/font/AvehopeDEMO-Regular-BF690d631a96549.otf);
+  src: url("./assets/font/AvehopeDEMO-Regular-BF690d631a96549.otf");
 }
 
-/* BODY BACKGROUND */
-
+/* BODY */
 body {
   min-height: 100vh;
-
   background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
     url("./assets/images/02.jpg") center / cover no-repeat fixed;
-
   color: #fff;
+  font-family: "Avehope", sans-serif;
 }
+
+/* CONTAINER */
 .container {
-  width: 100%;
-  max-width: 1250px;
+  max-width: 1150px;
   margin: auto;
+  padding: 0 15px;
 }
+
+/* HEADER */
 header {
   padding: 20px 0;
 }
 
 .nav {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   gap: 20px;
 }
 
-.nav img {
-  max-height: 150px;
-  border-radius: 50px;
+/* LOGO */
+.logo {
+  max-height: 120px;
+  border-radius: 40px;
 }
 
+/* NAV BUTTON */
 .nav button {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: 10px;
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 10px 30px;
+  padding: 12px 25px;
   border-radius: 12px;
-  color: #fff;
   cursor: pointer;
-  h3 {
-    font-family: "Avehope", sans-serif;
-    font-size: 25px;
-    margin: 0;
-    color: #0b2a3a;
-  }
-  p {
-    font-family: "Avehope", sans-serif;
-    font-size: 20px;
-    color: #e39a4c;
-  }
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .nav button img {
-  width: 50px;
+  width: 40px;
 }
 
+.nav button h3 {
+  font-size: 22px;
+  color: #0b2a3a;
+}
+
+.nav button p {
+  font-size: 16px;
+  color: #e39a4c;
+}
+
+/* MAIN */
 #main {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -103,253 +82,74 @@ header {
 }
 
 .main-content h1 {
-  font-family: "Avehope", sans-serif;
-  font-size: 80px;
-  margin-bottom: 20px;
+  font-size: clamp(36px, 8vw, 70px);
   color: #bd7c37;
-}
-
-.another {
-  font-family: "Avehope", sans-serif;
-  color: #bd7c37;
-  font-size: 40px;
 }
 
 .main-content p {
-  font-family: "Avehope", sans-serif;
-  font-size: 30px;
-  margin-bottom: 15px;
+  font-size: clamp(18px, 4.5vw, 26px);
   color: #c7d1d8;
+  margin-bottom: 15px;
 }
 
-.main-content button {
-  font-family: "Avehope", sans-serif;
-
-  margin-top: 20px;
+.another {
+  font-size: clamp(22px, 5.5vw, 36px);
   color: #bd7c37;
-  padding: 14px 30px;
-  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+/* MAIN BUTTON */
+.mainbtn {
+  margin-top: 20px;
+  padding: 15px 35px;
+  font-size: 20px;
   background: #0b2a3a;
   border: none;
   border-radius: 30px;
   cursor: pointer;
-  a {
-    text-decoration: none;
-    color: #bd7c37;
-  }
-}
-
-.main-image img {
-  width: 100%;
-  max-width: 500px;
-}
-@media (max-width: 768px) {
-  .nav {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  #main {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .main-image img {
-    margin: auto;
-  }
-
-  body {
-    background-attachment: scroll;
-  }
-}
-.carousel {
-  position: relative;
-  overflow: hidden;
-  max-width: 500px;
-}
-
-.carousel-track {
-  display: flex;
-  transition: transform 0.4s ease;
-}
-
-.carousel-track img {
-  width: 100%;
-  flex-shrink: 0;
-  border-radius: 20px;
-}
-
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  border: none;
-  font-size: 30px;
-  padding: 10px 15px;
-  cursor: pointer;
-}
-
-.prev {
-  left: 10px;
-}
-.next {
-  right: 10px;
-}
-
-@media (max-width: 768px) {
-  .carousel,
-  .scroll-gallery img {
-    max-width: 100%;
-  }
-}
-
-.nav button {
   transition: transform 0.3s ease, background 0.3s ease;
 }
 
-.nav button:hover {
-  transform: scale(1.1); /* 10% kattalashadi */
-  background: rgba(255, 255, 255, 0.25);
+.mainbtn a {
+  color: #bd7c37;
+  text-decoration: none;
 }
 
-.main-content button {
-  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+.mainbtn:hover {
+  transform: scale(1.08);
+  background: #bd7c37;
 }
 
-.main-content button:hover {
-  transform: scale(1.1); /* 10% kattalashadi */
-  background: #bd7c37; /* rangini o'zgartirish */
-  a {
-    font-family: "Avehope", sans-serif;
-    color: #fff;
-  }
-}
-
-footer {
-  background: #0b2a3a;
+.mainbtn:hover a {
   color: #fff;
-  padding: 40px 0 20px;
-  font-family: "Avehope", sans-serif;
 }
 
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 30px;
-  max-width: 1250px;
-  margin: auto;
-}
-.footer-left {
-  p {
-    font-family: "Avehope", sans-serif;
-    color: #bd7c37;
-    font-size: 25px;
-  }
-}
-.footer-left,
-.footer-right {
-  flex: 1 1 300px;
+/* PRIZE */
+#prize {
+  padding: 80px 20px;
+  margin-bottom: 80px;
+  text-align: center;
+  border: 2px solid #bd7c37;
+  border-radius: 25px;
+  background: rgba(11, 42, 58, 0.9);
 }
 
-.footer-logo {
-  max-height: 100px;
-  margin-bottom: 15px;
+#prize h3:first-child {
+  font-size: clamp(22px, 5vw, 32px);
+  color: #bd7c37;
+  margin-bottom: 40px;
+}
+
+#prize .card {
+  width: 300px;
+  margin: 20px;
+  padding: 20px;
   border-radius: 20px;
-}
-
-.footer-icons img {
-  width: 50px;
-  margin-right: 15px;
-}
-
-.footer-right h3 {
-  font-family: "Avehope", sans-serif;
-  color: #bd7c37;
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-
-.footer-right p {
-  font-family: "Avehope", sans-serif;
-  color: #bd7c37;
-  margin-bottom: 8px;
-}
-
-.socials a img {
-  font-family: "Avehope", sans-serif;
-  color: #c7d1d8;
-  width: 30px;
-  margin-right: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  display: inline-block;
   transition: transform 0.3s ease;
 }
 
-.socials a img:hover {
-  transform: scale(1.2);
-}
-
-.footer-bottom {
-  font-family: "Avehope", sans-serif;
-  text-align: center;
-  margin-top: 30px;
-  font-size: 18px;
-  color: #bd7c37;
-}
-
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .footer-icons img {
-    margin-right: 10px;
-    margin-top: 10px;
-  }
-}
-
-/* PRIZE SECTION */
-#prize {
-  background: linear-gradient(rgba(11, 42, 58, 0.9), rgba(11, 42, 58, 0.9)),
-    url("") center/cover no-repeat fixed;
-  color: #fff;
-  padding: 80px 10px;
-  text-align: center;
-  font-family: "Avehope", sans-serif;
-  margin-bottom: 80px;
-  border: 2px solid #bd7c37;
-  border-radius: 25px;
-}
-
-#prize h3:first-of-type {
-  font-family: "Avehope", sans-serif;
-  font-size: 32px;
-  margin-bottom: 50px;
-  color: #bd7c37;
-}
-
-/* Card container */
-#prize .card {
-  display: inline-block;
-  width: 300px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-  margin: 20px;
-  padding: 20px;
-  vertical-align: top;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-#prize .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-/* Card images */
 #prize .card img {
   width: 100%;
   height: 200px;
@@ -358,76 +158,68 @@ footer {
   margin-bottom: 15px;
 }
 
-/* Card titles */
-#prize .card h3 {
-  font-size: 20px;
-  color: #e39a4c;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  #prize .card {
-    width: 45%;
-  }
-}
-
-@media (max-width: 768px) {
-  #prize h3:first-of-type {
-    font-size: 28px;
-  }
-
-  #prize .card {
-    width: 80%;
-    margin: 20px auto;
-  }
-
-  #prize .card img {
-    height: 180px;
-  }
-}
-
-@media (max-width: 480px) {
-  #prize h3:first-of-type {
-    font-size: 24px;
-  }
-
-  #prize .card img {
-    height: 150px;
-  }
-}
-
+/* PRIZE BUTTON */
 #prize button {
   margin-top: 40px;
   padding: 15px 40px;
   font-size: 20px;
-  font-family: "Avehope", sans-serif;
-  background: #bd7c37;
-  color: #0b2a3a;
-  border: none;
   border-radius: 30px;
+  background: #bd7c37;
+  border: none;
   cursor: pointer;
-  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
 }
 
-#prize button:hover {
-  transform: scale(1.1);
-  background: #e39a4c;
-  color: #fff;
-}
-
-/* Agar button ichidagi link bo‘lsa */
 #prize button a {
+  color: #0b2a3a;
   text-decoration: none;
-  color: inherit;
 }
 
-/* Responsive */
+/* =======================
+   MOBILE (<= 768px)
+======================= */
 @media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .nav button {
+    justify-content: center;
+  }
+
+  #main {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .mainbtn,
   #prize button {
-    width: 80%;
-    margin: 30px auto 0 auto;
-    display: block;
-    font-size: 18px;
-    padding: 12px 30px;
+    width: 100%;
+    max-width: 360px;
+  }
+
+  #prize .card {
+    width: 100%;
+    max-width: 340px;
+  }
+}
+
+/* =======================
+   HOVER FAQAT DESKTOP
+======================= */
+@media (hover: hover) {
+  .nav button:hover,
+  .mainbtn:hover,
+  #prize .card:hover {
+    transform: scale(1.05);
   }
 }
