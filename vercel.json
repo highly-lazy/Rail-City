@@ -5,5 +5,11 @@
       "destination": "/railcity",
       "permanent": false
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/railcity",
+      "destination": "/index.html"
+    }
   ]
 }
